@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
+  isProduction: boolean = environment.production;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
