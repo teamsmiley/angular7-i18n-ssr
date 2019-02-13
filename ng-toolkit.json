@@ -1,0 +1,8 @@
+{
+  "universal": {
+    "project": "angular7-ssr",
+    "skipInstall": false,
+    "directory": ".",
+    "http": true
+  }
+}
