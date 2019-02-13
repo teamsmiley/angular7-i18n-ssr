@@ -142,19 +142,26 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/server",
+            "outputPath": "dist/server/en",
             "main": "src/main.server.ts",
-            "tsConfig": "src/tsconfig.server.json"
+            "tsConfig": "src/tsconfig.server.json",
+            "i18nFile": "src/locale/messages.en.xlf",
+            "i18nFormat": "xlf",
+            "i18nLocale": "en",
+            "i18nMissingTranslation": "error"
           }
-          // "configurations": {
-          //   "production": {
-          //     "outputPath": "dist/browser/ko",
-          //     "i18nFile": "src/locale/messages.ko.xlf",
-          //     "i18nFormat": "xlf",
-          //     "i18nLocale": "ko",
-          //     "i18nMissingTranslation": "error"
-          //   }
-          // }
+        },
+        "server-ko": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server/ko",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json",
+            "i18nFile": "src/locale/messages.ko.xlf",
+            "i18nFormat": "xlf",
+            "i18nLocale": "ko",
+            "i18nMissingTranslation": "error"
+          }
         }
       }
     },

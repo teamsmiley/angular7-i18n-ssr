@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "start-ko": "ng serve --configuration=production-ko",
     "build-ko": "ng build --configuration=production-ko",
-    "build:server:prod": "ng run my-app:server && webpack --config webpack.server.config.js --progress --colors",
+    "build:server:prod": "ng run my-app:server && ng run my-app:server-ko && webpack --config webpack.server.config.js --progress --colors",
     "build:browser:prod": "ng build --configuration=production && ng build --configuration=production-ko",
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
     "server": "node local.js"
