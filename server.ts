@@ -44,7 +44,24 @@ app.get('*.*', express.static('./dist/browser', {
 }));
 
 app.get('/*', (req, res) => {
-  res.render('index', { req, res }, (err, html) => {
+  const supportedLocales = ['en', 'ko'];
+  var defaultLocale = 'en';
+
+  var lang = req.acceptsLanguages(supportedLocales);
+  if (lang) {
+    console.log('The first accepted of [en,ko] is: ' + lang);
+    defaultLocale = lang;
+  } else {
+    console.log('None of [en,ko] is accepted');
+  }
+
+  const matches = req.url.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
+  //check if the requested url has a correct format '/locale' and matches any of the supportedLocales
+  const locale = (matches && supportedLocales.indexOf(matches[1]) !== -1) ? matches[1] : defaultLocale;
+
+  // res.render('index', { req, res }, (err, html) => {
+  res.render(`${locale}/index`, { req, res }, (err, html) => {
+
     if (html) {
       res.send(html);
     } else {

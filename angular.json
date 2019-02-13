@@ -145,6 +145,15 @@
             "outputPath": "dist/server",
             "main": "src/main.server.ts",
             "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputPath": "dist/browser/ko",
+              "i18nFile": "src/locale/messages.ko.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ko",
+              "i18nMissingTranslation": "error"
+            }
           }
         }
       }
